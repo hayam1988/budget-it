@@ -30,7 +30,18 @@ budget: [{
       <div className= "funds"> 
       <div className= "funds-header"> Daily budget </div>
       
-      $55 /day</div>
+      $55 /day 
+
+      </div>
+
+      <TextField
+        id="filled-with-placeholder"
+        label=" Mounthly Income"
+        placeholder="$00.00"
+        fullWidth
+        margin="normal"
+        variant="filled"
+      />
 
       <TextField
         id="filled-with-placeholder"
