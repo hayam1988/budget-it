@@ -3,9 +3,8 @@
 import moment from 'moment';
 import React from 'react';
 import './App.css';
-
-import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 class App extends React.Component {
 state = {
@@ -28,17 +27,21 @@ budget: [{
         </header>
         <div className= "time"> Today <div>{selectedDate}</div></div> 
       
-      <div className= "funds"> $55 /day</div>
-        
+      <div className= "funds"> 
+      <div className= "funds-header"> Daily budget </div>
+      
+      $55 /day</div>
+
       <TextField
-        id="filled-name"
-        label="Name"
-        className={classes.textField}
-        value={values.name}
-        onChange={handleChange('name')}
+        id="filled-with-placeholder"
+        label=" Expense #1"
+        placeholder="$00.00"
+        fullWidth
         margin="normal"
+        
         variant="filled"
       />
+    
       
       
       </div>
