@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  height: 100%;
+  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+  background: #5A3F37;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, rgba(161, 136, 129, 0.925), rgb(147, 191, 194));  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom,rgba(161, 136, 129, 0.918), rgb(147, 191, 194)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+/* background: whitesmoke;*/
 }
 
 html, body, root{
@@ -15,17 +23,43 @@ html, body, root{
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  height: 50px; 
+  min-height: 10vh;
+  height: 100px; 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  
 }
 
+.App .time {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+ /* background-color: rgb(133, 130, 127); */
+  background-color: rgba(147, 191, 194, 0.788);
+  height: 40px; 
+  font-weight: 600;
+  font-size: calc(3px + 2vmin);
+  color:white;
+  padding: 0px 25px;
+}
 
+.App .funds {
+  color: rgb(41, 41, 41); 
+  background:rgba(255, 255, 255, 0.397);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 48px;
+  padding: 80px;
+  font-size: calc(4px + 4vmin);
+  border: solid 3px rgb(245, 245, 245);
+  
+}
 .App-link {
   color: #61dafb;
 }
