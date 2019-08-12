@@ -11,8 +11,6 @@ import 'antd/dist/antd.css';
 
 import { Input } from 'antd';
 
-
-
 class App extends React.Component {
 
   state = {
