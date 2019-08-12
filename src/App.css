@@ -55,25 +55,38 @@ html, body, root{
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  margin: 48px;
-  padding: 80px;
-  /*padding: 60px;*/
-  font-size: calc(4px + 4vmin);
+  margin: 8px auto;
+  
+  
+  font-size: calc(5px + 5vmin);
   border: solid 3px rgb(245, 245, 245);
-  font-weight: 600;
+  font-weight: 100;
+  
+  border: solid 1px white;
+  border-radius: 410px;
+  /*padding: 70px;*/
+
+  height: 200px;
+  width: 200px;
+  
+  border-radius: 50%;
   
 }
 
+/*need to fix positioning*/
 .App .funds-header{
-  top: 20%;
-  position: absolute;
+  
+  position: relative;
   border: solid 2px white;
-  width: calc(100% - 107px);
+  width: calc(100% - -10rem);
+  top: -5rem;
   font-size: calc(3px + 3vmin);
   font-weight: 400;
   background: rgba(0, 0, 0, 0.596);
   color: rgb(236, 236, 136);
-  padding: 4px;
+  height: 5rem;
+  
+  
 }
 
 .App .fund-circle{
@@ -81,10 +94,15 @@ html, body, root{
   border: solid 1px white;
   border-radius: 100%;
   padding: 70px;
+}
 
+.footer .button {
+  position: absolute;
+  left: 10px;
 
 
 }
+
 .App-link {
   color: #61dafb;
 }
