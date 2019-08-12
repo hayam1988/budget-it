@@ -7,7 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import { Modal, Button } from 'antd';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-
+import 'antd/dist/antd.css';
 
 import { Input } from 'antd';
 
@@ -19,9 +19,11 @@ class App extends React.Component {
     startDate: moment(),
     ModalText: 'Content of the modal',
     visible: false,
-
+    expenses: [
+      {label:'Monthly Income', placeholder:'$00.00', value:0},
+      {label:'Expense #1', placeholder:'$00.00', value:0},
+    ]
   }
-
 
   showModal = () => {
     this.setState({
@@ -50,6 +52,16 @@ class App extends React.Component {
   /*<div className= "funds-header"> Daily budget </div>*/
   render() {
     const selectedDate = this.state.startDate.format("ll");
+    const {expenses} = this.state
+
+    var dailyAmount = 0
+    expenses.forEach((e,i)=>{
+      if(i===0) {
+        dailyAmount += e.value/30
+      } else {
+        dailyAmount -= e.value/30
+      }
+    })
 
     return (
 
@@ -60,7 +72,7 @@ class App extends React.Component {
         <div className="time"> Today <div>{selectedDate}</div></div>
 
         <div className="funds">
-          $55 /day
+          ${dailyAmount.toFixed(2)} /day
          </div>
 
         Remaining Balance:
@@ -81,24 +93,22 @@ class App extends React.Component {
             onOk={this.handleOk}
             onCancel={this.handleCancel}
           >
-
-            <TextField
-              id="filled-with-placeholder"
-              label=" Mounthly Income"
-              placeholder="$00.00"
-              fullWidth
-              margin="normal"
-              variant="filled"
-            />
-
-            <TextField
-              id="filled-with-placeholder"
-              label=" Expense #1"
-              placeholder="$00.00"
-              fullWidth
-              margin="normal"
-              variant="filled"
-            />
+            {expenses.map((e,i)=>{
+              return <TextField
+                id="filled-with-placeholder"
+                type="number"
+                label={e.label}
+                placeholder={e.placeholder}
+                fullWidth
+                onChange={e=> {
+                  const exp = [...expenses]
+                  exp[i].value = e.target.value
+                  this.setState({expenses: exp})
+                }}
+                margin="normal"
+                variant="filled"
+              />
+            })}
           </Modal>
         </div>
       </div>
