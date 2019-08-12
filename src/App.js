@@ -19,7 +19,7 @@ class App extends React.Component {
     startDate: moment(),
     ModalText: 'Content of the modal',
     visible: false,
-    
+
   }
 
 
@@ -50,7 +50,7 @@ class App extends React.Component {
   /*<div className= "funds-header"> Daily budget </div>*/
   render() {
     const selectedDate = this.state.startDate.format("ll");
-  
+
     return (
 
       <div className="App">
@@ -63,21 +63,25 @@ class App extends React.Component {
           $55 /day
          </div>
 
-         Remaining Balance:
+        Remaining Balance:
 
-         <Input placeholder="input with clear icon" allowClear onChange={onChange} />
+         <Input placeholder="" allowClear onChange={onChange} />
 
-        <div className= "footer">
-        <Button type="primary" onClick={this.showModal}>
-          Open Modal
+        <div className="footer">
+
+          <Fab color="primary" aria-label="add" className="button">
+            <AddIcon />
+          </Fab>
+          <Button type="primary" onClick={this.showModal}>
+            Open Modal
         </Button>
-          <Modal className= "Modal"
-                title="Basic Modal"
-                visible={this.state.visible}
-                onOk={this.handleOk}
-                onCancel={this.handleCancel}
+          <Modal className="Modal"
+            title="Basic Modal"
+            visible={this.state.visible}
+            onOk={this.handleOk}
+            onCancel={this.handleCancel}
           >
-            
+
             <TextField
               id="filled-with-placeholder"
               label=" Mounthly Income"
@@ -96,17 +100,11 @@ class App extends React.Component {
               variant="filled"
             />
           </Modal>
-
-      <Fab color="primary" aria-label="add" className="button">
-        <AddIcon />
-      </Fab>
-      </div>
+        </div>
       </div>
     );
   }
-}
-
-
+} /* end of react component*/
 
 export default App;
 
