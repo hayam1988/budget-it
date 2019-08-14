@@ -3,11 +3,16 @@
   height: 100%;
   font-size: calc(10px + 2vmin);
   min-height: 100vh;
-  background: #5A3F37;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, rgba(161, 136, 129, 0.925), rgb(147, 191, 194));  /* Chrome 10-25, Safari 5.1-6 */
+  /*
+  background: #5A3F37;  /* fallback for old browsers 
+  background: -webkit-linear-gradient(to bottom, rgba(161, 136, 129, 0.925), rgb(147, 191, 194));  /* Chrome 10-25, Safari 5.1-6 
   background: linear-gradient(to bottom,rgba(161, 136, 129, 0.918), rgb(147, 191, 194)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 /* background: whitesmoke;*/
+background: #659999;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #f4791f, #659999);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #f4791f, #659999); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 html, body, root{
@@ -29,9 +34,10 @@ html, body, root{
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  
+  font-size: calc(12px + 2vmin);
+  color:white; 
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600; 
 }
 
 .App .time {
@@ -39,8 +45,11 @@ html, body, root{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
- /* background-color: rgb(133, 130, 127); */
-  background-color: rgba(147, 191, 194, 0.788);
+   
+  background:rgba(96, 148, 144, 0.61);
+  border: 1.5px solid #282c34;
+  /*background-color: rgba(147, 191, 194, 0.788);*/
+
   height: 40px; 
   font-weight: 600;
   font-size: calc(3px + 2vmin);
@@ -83,9 +92,7 @@ html, body, root{
   font-weight: 400;
   background: rgba(0, 0, 0, 0.596);
   color: rgb(236, 236, 136);
-  height: 5rem;
-  
-  
+  height: 5rem; 
 }
 
 .App .fund-circle{
@@ -95,20 +102,52 @@ html, body, root{
   padding: 70px;
 }
 
+/* --Modal--*/
+.modal .add {
+/*background-color: rgb(161, 136, 129);*/
+/*background-color:#cf834d;*/
+background-color: whitesmoke;
+border: 2px solid #cf834d;
+color: #cf834d; 
+position: absolute;
+left: 1rem; 
+bottom: .5rem;
+}
 
+.modal .add:hover{
+  background-color: #cf834d;
+  color: white;
+}
+
+
+
+/*---Footer ---*/
 .footer{
   /*
 position: absolute;
 bottom: 40px;  */
+
 display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: space-around;
-
-
 }
+
+.footer .modal-button{
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+}
+
 .footer .button {
-  background-color: rgba(147, 191, 194, 0.788);
+  background-color: rgba(255, 255, 255, 0.322);
+  border: solid 1px rgba(255, 255, 255, 0.568);
+  position: absolute;
+  bottom: 10px;
+}
+
+.footer .button:hover{
+  background: #282c34;
 }
 
 

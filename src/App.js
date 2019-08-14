@@ -12,6 +12,8 @@ import 'antd/dist/antd.css';
 import { Input } from 'antd';
 
 class App extends React.Component {
+ 
+
 
   state = {
     startDate: moment(),
@@ -19,9 +21,14 @@ class App extends React.Component {
     visible: false,
     expenses: [
       {label:'Monthly Income', placeholder:'$00.00', value:0},
-      {label:'Expense #1', placeholder:'$00.00', value:0},
+      {label:'Rent/Mortgage', placeholder:'$00.00', value:0},
+      {label:'Car/Insurance', placeholder:'$00.00', value:0},
+      {label:'Phone/Cable', placeholder:'$00.00', value:0},
+
     ]
+
   }
+
 
   showModal = () => {
     this.setState({
@@ -42,6 +49,19 @@ class App extends React.Component {
       visible: false,
     });
   };
+
+  /* fix bug: when user click to add more textfield they must enter a value, 
+  possible fix maybe defulat value is zero */
+
+  /* add a subtract to take away delete button to delete textfiled*/
+  
+add = (i) => {
+  const {expenses} = this.state
+  expenses.push(i)
+  this.setState({ expenses });
+
+ 
+}
 
 
 
@@ -65,32 +85,34 @@ class App extends React.Component {
 
       <div className="App">
         <header className="App-header">
-          BUDGET-IT &nbsp;|&nbsp;|&nbsp; Daily Balance
+          BUDGET-IT
         </header>
         <div className="time"> Today <div>{selectedDate}</div></div>
-
+          Daily Budget
         <div className="funds">
           ${dailyAmount.toFixed(2)} /day
          </div>
 
-        Remaining Balance:
+       Total Monthly Savings:
 
-         <Input placeholder="" allowClear onChange={onChange} />
+       <Input placeholder="" allowClear onChange={onChange} />
 
         <div className="footer">
 
           <Fab color="primary" aria-label="add" className="button">
             <AddIcon />
           </Fab>
-          <Button type="primary" onClick={this.showModal}>
+          <Button type="primary" className= "modal-button" onClick={this.showModal}>
             Open Modal
         </Button>
-          <Modal className="Modal"
-            title="Basic Modal"
+        </div>
+          <Modal className= "modal"
+            title="Income & Expenses"
             visible={this.state.visible}
             onOk={this.handleOk}
             onCancel={this.handleCancel}
           >
+            Fill-in Mounthly Income and Recurring Expenses:
             {expenses.map((e,i)=>{
               return <TextField
                 id="filled-with-placeholder"
@@ -105,10 +127,16 @@ class App extends React.Component {
                 }}
                 margin="normal"
                 variant="filled"
-              />
+              />           
             })}
+            
+        <Fab size="small"  aria-label="add" className= "add" onClick={this.add}>
+          <AddIcon />
+          
+        </Fab>
+          
           </Modal>
-        </div>
+        
       </div>
     );
   }
