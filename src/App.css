@@ -231,3 +231,23 @@ justify-content: space-around;
 }
 
 
+.App .alert{
+  animation: FadeAnimation 3s ease-in .5s forwards;
+   
+}
+
+@keyframes FadeAnimation {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+ 
+
+ 
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

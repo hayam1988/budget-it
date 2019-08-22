@@ -9,7 +9,7 @@ import './App.css';
 import * as firebase from "firebase/app"
 import "firebase/firestore"
 */
-
+import { Alert } from 'antd';
 import TextField from '@material-ui/core/TextField';
 import { Modal, Button } from 'antd';
 import Fab from '@material-ui/core/Fab';
@@ -19,11 +19,16 @@ import RemoveIcon from '@material-ui/icons/Remove';
 
 
 
+
+
+
 class App extends React.Component {
+ 
   state = {
     startDate: moment(),
     ModalText: 'Content of the modal',
     visible: false,
+    showAlert: false,
    
     clicks: 0,
     expenses: [
@@ -32,14 +37,15 @@ class App extends React.Component {
       { label: 'Car payment/Insurance', placeholder: '$00.00', value: 0 },
       { label: 'Phone/Cable', placeholder: '$00.00', value: 0 },
     ],
-
-
-    newarr: [ { label: 'Other ', placeholder: '$00.00', value: 0 }]
+    
     
   
   }
   
+
   componentWillMount() {
+
+    
    /*
     const expenses = localStorage.getItem('expenses')
     this.setState({expenses})
@@ -74,6 +80,7 @@ class App extends React.Component {
     this.setState({
       ModalText: 'The modal will be closed after two seconds',
       visible: false,
+      showAlert: true,
       
     });
     /*
@@ -153,7 +160,9 @@ this.setState({expenses})
 
     const selectedDate = this.state.startDate.format("ll");
     const { expenses } = this.state
+   
     const {savings} = this.state
+  
 
     var dailyAmount = 0
     expenses.forEach((e, i) => {
@@ -228,8 +237,12 @@ this.setState({expenses})
               margin="normal"
               variant="filled"
             />
+            
           })}
 
+     
+      
+          
           <Fab size="small" aria-label="add" className="add" onClick={this.add}>
             <AddIcon />
           </Fab>
@@ -240,10 +253,25 @@ this.setState({expenses})
           </Fab>
 
         </Modal>
+  
+        {this.state.showAlert ? 
+          <Alert
+            message="SUCCESS"
+            description="Based on your income and expenses this is your daily budget!"
+            type="success"
+            className="alert"
+            showIcon
+            closable
+            afterClose={this.handleOk}
+            
+            /> : null}
+        
       </div>
     );
   }
 } /* end of react component*/
+
+
 
 export default App;
 /*
