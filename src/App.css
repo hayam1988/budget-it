@@ -20,6 +20,7 @@ html, body, root{
 }
 
 
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
@@ -66,7 +67,7 @@ html, body, root{
   align-items: center;
    
   background:rgba(96, 148, 144, 0.199);
-  border: 1.5px solid #282c34;
+  border: .5px solid #a4a5a5;
   /*background-color: rgba(147, 191, 194, 0.788);*/
 
   height: 40px; 
@@ -177,28 +178,38 @@ justify-content: space-around;
 
 .footer .modal-button{
   position: absolute;
-  bottom: 13px;
+  bottom: 10px;
   left: 15px;
-  background-color: rgba(255, 255, 255, 0.322);
-  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: solid 1px rgba(255, 255, 255, 0.61);
   color:white;
-  height: 3rem;
+  height: 3.6rem;
+  width: 3.6rem;
+  font-size: 17px;
+  border-radius: 100%;
+  box-shadow: 0px 3px 5px -1px 
+            rgba(0,0,0,0.2), 0px 6px 10px 0px 
+            rgba(0,0,0,0.14), 0px 1px 18px 0px
+            rgba(0,0,0,0.12);
+  
+  
 }
 
 .footer .modal-button:hover{
   background: #282c34;
-  border: solid 1px rgba(255, 255, 255, 0.568);
+  border: solid 1px rgba(255, 255, 255, 0.61);
 }
 
 .footer .button {
   background-color: rgba(255, 255, 255, 0.322);
-  border: solid 1px rgba(255, 255, 255, 0.568);
+  border: solid 1px rgba(255, 255, 255, 0.61);
   position: absolute;
   bottom: 10px;
 }
 
 .footer .button:hover{
   background: #282c34;
+  
 }
 
 
@@ -206,8 +217,10 @@ justify-content: space-around;
   position: absolute;
   right: 15px;
   bottom: .5rem;
-  background-color:  #659999;
-  border: 1px solid  white;
+
+  background-color: rgba(255, 255, 255, 0.3);
+  /*background-color:  #659999;*/
+  border: 1px solid  rgba(255, 255, 255, 0.61);
   color:white; 
 }
 
@@ -232,8 +245,13 @@ justify-content: space-around;
 
 
 .App .alert{
-  animation: FadeAnimation 3s ease-in .5s forwards;
-   
+ animation: FadeAnimation 3s ease-in .5s forwards;
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  padding: 23px 30px 14px;
 }
 
 @keyframes FadeAnimation {
@@ -242,12 +260,10 @@ justify-content: space-around;
     visibility: visible;
   }
 
- 
-
- 
-
   100% {
     opacity: 0;
     visibility: hidden;
   }
 }
+
+

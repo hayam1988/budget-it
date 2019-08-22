@@ -16,6 +16,7 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import 'antd/dist/antd.css';
 import RemoveIcon from '@material-ui/icons/Remove';
+import { Icon } from 'antd';
 
 
 
@@ -187,7 +188,7 @@ this.setState({expenses})
         </header>
         <div className="time"> Today <div>{selectedDate}</div></div>
         
-        Daily Budget
+        <h3>Daily Budget</h3>
       
         <div className="funds">
           ${(dailyAmount+this.state.clicks).toFixed(2)} /day
@@ -210,7 +211,8 @@ this.setState({expenses})
           </Fab>
 
           <Button type="primary" className="modal-button" onClick={this.showModal}>
-            Open Modal
+          <Icon type="fund" />
+           
           </Button>
         </div>
 
@@ -257,11 +259,11 @@ this.setState({expenses})
         {this.state.showAlert ? 
           <Alert
             message="SUCCESS"
-            description="Based on your income and expenses this is your daily budget!"
+          
+            description= " Based on your income and expenses this is your daily budget!"
             type="success"
             className="alert"
             showIcon
-            closable
             afterClose={this.handleOk}
             
             /> : null}
