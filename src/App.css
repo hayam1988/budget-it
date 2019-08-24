@@ -235,7 +235,7 @@ justify-content: space-around;
 }
 
 @keyframes App-logo-spin {
-  from {
+  from { 
     transform: rotate(0deg);
   }
   to {
