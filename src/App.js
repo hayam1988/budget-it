@@ -4,11 +4,6 @@
 import moment from 'moment';
 import React from 'react';
 import './App.css';
-
-/* ${savings.toFixed(2)}
-import * as firebase from "firebase/app"
-import "firebase/firestore"
-*/
 import { Alert } from 'antd';
 import TextField from '@material-ui/core/TextField';
 import { Modal, Button } from 'antd';
@@ -135,31 +130,6 @@ IncrementItem = () => {
 
 DecreaseItem = () => {
   this.setState({ clicks: this.state.clicks - 1 });
-}
-
-setExpenses = (expenses) => {
-  if (!expenses) {
-    localStorage.setItem("expenses", JSON.stringify(this.state.expenses))
-
-  }
-  this.setState({ expenses })
-}
-
-
-
-saveExpenses = (expenses) => {
-  var str = JSON.stringify(expenses)
-  localStorage.setItems("expenses", str)
-}
-
-getExpenses = (expenses) => {
-  var str = localStorage.getItem("expenses")
-  expenses = JSON.parse(str)
-
-  if (!expenses) {
-    expenses = []
-  }
-
 }
 
 /*$55 will be budget amount */
