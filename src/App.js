@@ -4,6 +4,11 @@
 import moment from 'moment';
 import React from 'react';
 import './App.css';
+
+/* ${savings.toFixed(2)}
+import * as firebase from "firebase/app"
+import "firebase/firestore"
+*/
 import { Alert } from 'antd';
 import TextField from '@material-ui/core/TextField';
 import { Modal, Button } from 'antd';
@@ -29,7 +34,7 @@ class App extends React.Component {
     clicks: 0,
     expenses: [
       { label: 'Monthly Income', placeholder: '$00.00', value: 0 },
-      { label: 'Rent/Mortgage', placeholder: '$00.00', value: 0 },
+      { label: 'Rent/Mortgagse', placeholder: '$00.00', value: 0 },
       { label: 'Car payment/Insurance', placeholder: '$00.00', value: 0 },
       { label: 'Phone/Cable', placeholder: '$00.00', value: 0 },
     ],
@@ -38,7 +43,7 @@ class App extends React.Component {
 
 
   componentWillMount() {
-
+ 
     localStorage.getItem('expenses') && this.setState({ expenses: JSON.parse(localStorage.getItem('expenses')) })
 
     const ts = new Date().valueOf()
@@ -55,7 +60,7 @@ class App extends React.Component {
   }
 
 
-
+/*
   componentDidMount() {
     if (!localStorage.getItem('expenses')) {
       this.fetchData()
@@ -63,11 +68,16 @@ class App extends React.Component {
       console.log("using loacal storeage")
     }
   }
+*/
+fetchData(){
+
+}
 
 
 componentWillUpdate(nextProps, nextState){
   localStorage.setItem('expenses', JSON.stringify(nextState.expenses))
 }
+
 
 showModal = () => {
   this.setState({
@@ -104,9 +114,11 @@ possible fix maybe defulat value is zero */
 
 add = (i) => {
   const { expenses } = this.state
- 
+  /*expenses.push(i)*/
   expenses.push({ label: 'Other Expenses', placeholder: '$00.00', value: 0 })
   this.setState({ expenses });
+
+  /*this.setState({expenses:[...this.state.expenses, newarr]})*/
   console.log("add")
 }
 
@@ -130,6 +142,31 @@ IncrementItem = () => {
 
 DecreaseItem = () => {
   this.setState({ clicks: this.state.clicks - 1 });
+}
+
+setExpenses = (expenses) => {
+  if (!expenses) {
+    localStorage.setItem("expenses", JSON.stringify(this.state.expenses))
+
+  }
+  this.setState({ expenses })
+}
+
+
+
+saveExpenses = (expenses) => {
+  var str = JSON.stringify(expenses)
+  localStorage.setItems("expenses", str)
+}
+
+getExpenses = (expenses) => {
+  var str = localStorage.getItem("expenses")
+  expenses = JSON.parse(str)
+
+  if (!expenses) {
+    expenses = []
+  }
+
 }
 
 /*$55 will be budget amount */
@@ -168,11 +205,6 @@ render() {
       dailyAmount -= e.value / 30
     }
   })
-
-
-
-
-
 
 
   return (
