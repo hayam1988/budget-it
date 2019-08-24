@@ -17,4 +17,6 @@ Their is buttons that can increase and decrease the daily budget as you recieve 
 - Show spreadsheet summary of monthly spending 
 - user set goals 
 
-![myapp]('images/app.png')
+![myapp](../images/app.png)
+
+C:\Users\HAYaS\HCDE438projects\dailybudget\src\images
