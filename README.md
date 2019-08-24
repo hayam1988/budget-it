@@ -19,4 +19,3 @@ Their is buttons that can increase and decrease the daily budget as you recieve 
 
 ![myapp](../images/app.png)
 
-C:\Users\HAYaS\HCDE438projects\dailybudget\src\images
