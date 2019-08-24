@@ -134,7 +134,7 @@ html, body, root{
 /*background-color: rgb(161, 136, 129);*/
 /*background-color:#cf834d;*/
 background-color: whitesmoke;
-border: 2px solid #cf834d;
+border: 2px solid rgba(202, 114, 55, 0.747) ;
 color: #cf834d; 
 position: absolute;
 left: 1rem; 
@@ -142,7 +142,7 @@ bottom: .5rem;
 }
 
 .modal .add:hover{
-  background-color:#282c34  ;
+  background-color:rgba(22, 22, 39, 0.747)  ;
   color: white;
   border: none;
 }
@@ -151,7 +151,7 @@ bottom: .5rem;
   /*background-color: rgb(161, 136, 129);*/
   /*background-color:#cf834d;*/
   background-color:  white;
-  border: 2px solid rgba(22, 22, 39, 0.884) ;
+  border: 2px solid rgba(22, 22, 39, 0.575) ;
   color:  #282c34 ; 
   position: absolute;
   left: 4.5rem; 
@@ -159,7 +159,7 @@ bottom: .5rem;
   }
   
   .modal .remove:hover{
-    background-color: #282c34;
+    background-color: rgba(22, 22, 39, 0.747);
     color: white;
     border: none;
   }
@@ -245,7 +245,7 @@ justify-content: space-around;
 
 
 .App .alert{
- animation: FadeAnimation 3s ease-in .5s forwards;
+ animation: FadeAnimation 3s ease-in 1s forwards;
  
   display: flex;
   flex-direction: column;
