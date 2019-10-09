@@ -18,6 +18,19 @@ import 'antd/dist/antd.css';
 import RemoveIcon from '@material-ui/icons/Remove';
 import { Icon } from 'antd';
 
+/*
+function greet(){
+    name = localStorage.getItem("name");
+    if (name == null || name == "null"){
+      alert("Hi, Stranger!");
+      name = prompt("What is your name?");
+      localStorage.setItem("name", name);
+    } else {
+      alert ("Hi, " + name + "!");
+    } // end greet
+  } // end function  
+
+  */
 
 
 
@@ -143,7 +156,7 @@ IncrementItem = () => {
 DecreaseItem = () => {
   this.setState({ clicks: this.state.clicks - 1 });
 }
-
+/*
 setExpenses = (expenses) => {
   if (!expenses) {
     localStorage.setItem("expenses", JSON.stringify(this.state.expenses))
@@ -168,7 +181,7 @@ getExpenses = (expenses) => {
   }
 
 }
-
+*/
 /*$55 will be budget amount */
 /* make model with income and expenses canccel and save button*/
 /*<div className= "funds-header"> Daily budget </div>*/

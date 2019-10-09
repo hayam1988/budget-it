@@ -17,5 +17,7 @@ Their is buttons that can increase and decrease the daily budget as you recieve 
 - Show spreadsheet summary of monthly spending 
 - user set goals 
 
+Visit on your mobile device: https://today-daily-budget.firebaseapp.com
+
 ![myapp](app.png)
 
